@@ -1,0 +1,53 @@
+[gd_scene load_steps=13 format=3 uid="uid://cu4rn3p3t4xon"]
+
+[ext_resource type="Script" uid="uid://b8yao2nufxou7" path="res://player/player.gd" id="1_kek77"]
+[ext_resource type="PackedScene" uid="uid://brga01h4xj8i3" path="res://game_over.tscn" id="2_4c57u"]
+[ext_resource type="Texture2D" uid="uid://8fsrmqcksk85" path="res://player/spaceship.png" id="3_efxa6"]
+[ext_resource type="AudioStream" uid="uid://dxjurkfl3yy88" path="res://player/laser.mp3" id="4_dg77c"]
+[ext_resource type="AudioStream" uid="uid://bu8wps003agfd" path="res://player/PlayerDamage.mp3" id="5_ycdy4"]
+[ext_resource type="AudioStream" uid="uid://dnc07p45w72nj" path="res://player/Move.mp3" id="6_w48qg"]
+[ext_resource type="Script" uid="uid://b7jof3gdoq47s" path="res://enemies/enemy_spawner.gd" id="7_vivmo"]
+[ext_resource type="PackedScene" uid="uid://bs4jxre0l6lry" path="res://enemies/enemy.tscn" id="8_kek77"]
+[ext_resource type="PackedScene" uid="uid://dypjug8m8l0io" path="res://boss/Boss.tscn" id="9_efxa6"]
+[ext_resource type="PackedScene" uid="uid://dn8urdsum21ey" path="res://gui-interface/Ui/gui.tscn" id="9_yaehf"]
+[ext_resource type="PackedScene" uid="uid://dn2q2ry4f2qvt" path="res://pause-menu/pause_menu.tscn" id="10_4c57u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_074og"]
+radius = 55.00909
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
+position = Vector2(580, 320)
+script = ExtResource("1_kek77")
+game_over_scene = ExtResource("2_4c57u")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+scale = Vector2(0.2456979, 0.24380165)
+texture = ExtResource("3_efxa6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CircleShape2D_074og")
+
+[node name="Shoot" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("4_dg77c")
+
+[node name="Damage" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("5_ycdy4")
+
+[node name="Move" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("6_w48qg")
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+script = ExtResource("7_vivmo")
+enemy_scene = ExtResource("8_kek77")
+boss_scene = ExtResource("9_efxa6")
+
+[node name="GUI" parent="." instance=ExtResource("9_yaehf")]
+z_index = -20
+
+[node name="PauseMenu" parent="." instance=ExtResource("10_4c57u")]
+offset_left = 576.0
+offset_top = 324.0
+offset_right = 576.0
+offset_bottom = 324.0

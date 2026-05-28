@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dr5o8d7pfh2ex"]
+
+[node name="GameOverScreen" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverText" type="Label" parent="Control"]
+modulate = Color(1, 0.08235294, 0.09803922, 1)
+layout_mode = 0
+offset_left = 324.00006
+offset_top = 50.000008
+offset_right = 416.00006
+offset_bottom = 76.00001
+scale = Vector2(5, 5)
+text = "GAME OVER"
+
+[node name="RetryButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 452.0
+offset_top = 274.0
+offset_right = 509.0
+offset_bottom = 305.0
+scale = Vector2(3, 3)
+text = "Retry?"
+
+[node name="MainMenuButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 404.0
+offset_top = 407.0
+offset_right = 500.0
+offset_bottom = 438.0
+scale = Vector2(3, 3)
+text = "Main Menu"
+
+[connection signal="pressed" from="Control/RetryButton" to="Control" method="_on_RetryButton_pressed"]
+[connection signal="pressed" from="Control/MainMenuButton" to="Control" method="_on_main_menu_button_pressed"]

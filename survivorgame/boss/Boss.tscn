@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dypjug8m8l0io"]
+
+[ext_resource type="Script" uid="uid://dxpy2vu5md8os" path="res://boss/boss.gd" id="1_4jvlg"]
+[ext_resource type="PackedScene" uid="uid://bdno7pleiowo6" path="res://boss/BossBullet.tscn" id="2_i7h4p"]
+[ext_resource type="Texture2D" uid="uid://ba77roh44m8v1" path="res://SpaceShipSprites.png" id="2_paxtu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohn0q"]
+size = Vector2(206, 154)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Boss" type="CharacterBody2D" parent="." groups=["enemies"]]
+script = ExtResource("1_4jvlg")
+bullet_scene = ExtResource("2_i7h4p")
+
+[node name="Sprite2D" type="Sprite2D" parent="Boss"]
+rotation = 3.1415927
+scale = Vector2(7.301563, 5.0971966)
+texture = ExtResource("2_paxtu")
+hframes = 10
+vframes = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss"]
+visible = false
+shape = SubResource("RectangleShape2D_ohn0q")

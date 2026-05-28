@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://oylly1gdo2yw"]
+
+[ext_resource type="Script" uid="uid://b8yao2nufxou7" path="res://player/player.gd" id="1_epypp"]
+[ext_resource type="Texture2D" uid="uid://8fsrmqcksk85" path="res://player/spaceship.png" id="2_0hol4"]
+[ext_resource type="Script" uid="uid://b7jof3gdoq47s" path="res://enemies/enemy_spawner.gd" id="3_q6r6c"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kdubu"]
+radius = 65.0
+height = 130.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_epypp")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_0hol4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_kdubu")
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+script = ExtResource("3_q6r6c")
+metadata/_custom_type_script = "uid://b7jof3gdoq47s"

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://db5e8eg6iccto"]
+
+[ext_resource type="Script" uid="uid://dwfq8fa1ob1qb" path="res://enemies/exp_drop.gd" id="1_xefd2"]
+[ext_resource type="Texture2D" uid="uid://b5inuaxofr8kr" path="res://star.svg" id="2_y6ben"]
+[ext_resource type="AudioStream" uid="uid://dcw1jupe8ddxx" path="res://515738__lilmati__retro-coin-07.wav" id="3_dxr70"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_prpen"]
+size = Vector2(54, 54)
+
+[node name="Expdrop" type="Area2D"]
+script = ExtResource("1_xefd2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_prpen")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.07537155, 0.06004367)
+texture = ExtResource("2_y6ben")
+
+[node name="Pickup" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_dxr70")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

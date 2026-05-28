@@ -1,0 +1,43 @@
+[gd_scene load_steps=11 format=3 uid="uid://bgg58abqb7ieh"]
+
+[ext_resource type="Script" uid="uid://b8yao2nufxou7" path="res://player/player.gd" id="1_rkbax"]
+[ext_resource type="PackedScene" uid="uid://brga01h4xj8i3" path="res://game_over.tscn" id="2_g1dw6"]
+[ext_resource type="Texture2D" uid="uid://8fsrmqcksk85" path="res://player/spaceship.png" id="2_rkbax"]
+[ext_resource type="AudioStream" uid="uid://dxjurkfl3yy88" path="res://player/laser.mp3" id="4_g6k8r"]
+[ext_resource type="AudioStream" uid="uid://bu8wps003agfd" path="res://player/PlayerDamage.mp3" id="5_boad6"]
+[ext_resource type="AudioStream" uid="uid://dnc07p45w72nj" path="res://player/Move.mp3" id="6_rgyib"]
+[ext_resource type="Script" uid="uid://b7jof3gdoq47s" path="res://enemies/enemy_spawner.gd" id="7_boad6"]
+[ext_resource type="PackedScene" uid="uid://bs4jxre0l6lry" path="res://enemies/enemy.tscn" id="8_rgyib"]
+[ext_resource type="PackedScene" uid="uid://dn8urdsum21ey" path="res://gui-interface/Ui/gui.tscn" id="9_hg6s5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yw30f"]
+radius = 65.0
+height = 130.0
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+z_index = 2
+script = ExtResource("1_rkbax")
+game_over_scene = ExtResource("2_g1dw6")
+
+[node name="GUI" parent="." instance=ExtResource("9_hg6s5")]
+z_index = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_rkbax")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_yw30f")
+
+[node name="Shoot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_g6k8r")
+
+[node name="Damage" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_boad6")
+
+[node name="Move" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_rgyib")
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+script = ExtResource("7_boad6")
+enemy_scene = ExtResource("8_rgyib")

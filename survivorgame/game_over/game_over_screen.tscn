@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://clmnrdutfeb2r"]
+
+[ext_resource type="Script" uid="uid://3fue23hody8w" path="res://game_over/GameOver.gd" id="1_wogij"]
+
+[node name="GameOverScreen" type="Control"]
+top_level = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wogij")
+
+[node name="GameOverText" type="Label" parent="."]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_left = 415.0
+offset_top = 64.0
+offset_right = 502.0
+offset_bottom = 87.0
+scale = Vector2(3, 3)
+text = "Game Over"
+
+[node name="RetryButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 374.0
+offset_top = 320.0
+offset_right = 749.0
+offset_bottom = 394.0
+text = "Retry"
+
+[node name="MainMenuButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 375.0
+offset_top = 412.0
+offset_right = 752.0
+offset_bottom = 486.0
+text = "Main Menu"
+
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]

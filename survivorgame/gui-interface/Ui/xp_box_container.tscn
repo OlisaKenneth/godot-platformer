@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg5q6tric0eq8"]
+
+[ext_resource type="Texture2D" uid="uid://b8nnn38uf8vaq" path="res://gui-interface/assets/bg 2.png" id="1_a4mi2"]
+[ext_resource type="Texture2D" uid="uid://dd70ekpfv71ek" path="res://gui-interface/assets/fill 2.png" id="2_abfm5"]
+
+[node name="XPBoxContainer" type="BoxContainer"]
+offset_right = 312.0
+offset_bottom = 40.0
+
+[node name="XPProgress" type="TextureProgressBar" parent="."]
+custom_minimum_size = Vector2(180, 30)
+layout_mode = 2
+texture_under = ExtResource("1_a4mi2")
+texture_progress = ExtResource("2_abfm5")
+
+[node name="XPLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(60, 30)
+layout_mode = 2
+text = "XP"

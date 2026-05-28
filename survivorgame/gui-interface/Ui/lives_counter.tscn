@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1xdl8waqqyg1"]
+
+[ext_resource type="Texture2D" uid="uid://bcsy4mbmx56s" path="res://gui-interface/assets/background_solid_sky.svg" id="1_acig3"]
+[ext_resource type="FontFile" uid="uid://bmdcok2ae5j41" path="res://gui-interface/assets/Comfortaa-Bold.ttf" id="2_wkfwt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_62ahl"]
+font = ExtResource("2_wkfwt")
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[node name="LivesCounter" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 65.0
+offset_bottom = 77.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+offset_right = 65.0
+offset_bottom = 77.0
+texture = ExtResource("1_acig3")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="LivesLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 65.0
+offset_bottom = 77.0
+text = "1"
+label_settings = SubResource("LabelSettings_62ahl")
+horizontal_alignment = 1
+vertical_alignment = 1

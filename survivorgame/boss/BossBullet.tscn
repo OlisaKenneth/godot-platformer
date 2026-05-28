@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdno7pleiowo6"]
+
+[ext_resource type="Script" uid="uid://bumgdkvvep20f" path="res://boss/BossBullet.gd" id="1_b2ldk"]
+[ext_resource type="Texture2D" uid="uid://ben7vaalbrgkn" path="res://Water Effect and Bullet 16x16.png" id="2_4hfic"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dmc77"]
+radius = 12.165525
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Bullet" type="Area2D" parent="."]
+script = ExtResource("1_b2ldk")
+speed = 200.0
+damage = 10
+metadata/_custom_type_script = "uid://dv7wfysu31yxr"
+
+[node name="Sprite2D" type="Sprite2D" parent="Bullet"]
+modulate = Color(1, 0.02745098, 0.05490196, 1)
+position = Vector2(-4, 1)
+scale = Vector2(1.3333334, 1.5)
+texture = ExtResource("2_4hfic")
+hframes = 27
+vframes = 12
+frame = 14
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bullet"]
+shape = SubResource("CircleShape2D_dmc77")
+
+[connection signal="body_entered" from="Bullet" to="Bullet" method="_on_body_entered"]

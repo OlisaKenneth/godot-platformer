@@ -1,0 +1,105 @@
+[gd_scene load_steps=10 format=3 uid="uid://d4fwxhqyb4pn1"]
+
+[ext_resource type="Script" uid="uid://ctotdnywmf3cm" path="res://gui-interface/Ui/stats_ui.gd" id="1_5iip1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_815hv"]
+corner_detail = 5
+
+[sub_resource type="LabelSettings" id="LabelSettings_e5wrt"]
+paragraph_spacing = 15.0
+font_size = 14
+font_color = Color(0.008202022, 0.008202025, 0.008202025, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_815hv"]
+font_size = 14
+font_color = Color(0.015971804, 0.015971802, 0.015971802, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ctjxt"]
+font_size = 14
+font_color = Color(0.015686275, 0.015686275, 0.015686275, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2sarj"]
+font_size = 14
+font_color = Color(0.015686275, 0.015686275, 0.015686275, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rln8i"]
+font_size = 14
+font_color = Color(0.015686275, 0.015686275, 0.015686275, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tjwqj"]
+font_size = 14
+font_color = Color(0.015686275, 0.015686275, 0.015686275, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qpgmy"]
+font_size = 14
+font_color = Color(0.015686275, 0.015686275, 0.015686275, 1)
+
+[node name="StatsUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_5iip1")
+
+[node name="StatsPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 408.0
+offset_right = 202.0
+offset_bottom = 644.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_815hv")
+
+[node name="StatsContainer" type="VBoxContainer" parent="StatsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="StatsPanel/StatsContainer"]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+color = Color(0.97400004, 1, 0.22000003, 1)
+
+[node name="StatsTitleLabel" type="Label" parent="StatsPanel/StatsContainer/ColorRect"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 46.0
+offset_bottom = 27.0
+text = "Stats"
+label_settings = SubResource("LabelSettings_e5wrt")
+
+[node name="HealthLabel" type="Label" parent="StatsPanel/StatsContainer"]
+layout_mode = 2
+text = "Health: 100.0 / 100.0"
+label_settings = SubResource("LabelSettings_815hv")
+
+[node name="XPLabel" type="Label" parent="StatsPanel/StatsContainer"]
+layout_mode = 2
+text = "XP: 0 / 3"
+label_settings = SubResource("LabelSettings_ctjxt")
+
+[node name="HSeparator" type="HSeparator" parent="StatsPanel/StatsContainer"]
+layout_mode = 2
+
+[node name="MaxHealthLabel" type="Label" parent="StatsPanel/StatsContainer"]
+layout_mode = 2
+text = "Max Health: 100.0"
+label_settings = SubResource("LabelSettings_2sarj")
+
+[node name="BulletSpeedLabel" type="Label" parent="StatsPanel/StatsContainer"]
+layout_mode = 2
+text = "Bullet Speed Multiplier: 1.0"
+label_settings = SubResource("LabelSettings_rln8i")
+
+[node name="DamageLabel" type="Label" parent="StatsPanel/StatsContainer"]
+layout_mode = 2
+text = "Damage Multiplier: 1.0"
+label_settings = SubResource("LabelSettings_tjwqj")
+
+[node name="MovementLabel" type="Label" parent="StatsPanel/StatsContainer"]
+layout_mode = 2
+text = "Movement Speed: 50.0"
+label_settings = SubResource("LabelSettings_qpgmy")

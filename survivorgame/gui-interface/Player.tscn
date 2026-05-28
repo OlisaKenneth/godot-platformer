@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfd11yng7jjvi"]
+
+[ext_resource type="Script" uid="uid://b1xd7c5twaia3" path="res://playerstats.gd" id="1_xhfnw"]
+[ext_resource type="Texture2D" uid="uid://8fsrmqcksk85" path="res://player/spaceship.png" id="2_kpjcp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kne1u"]
+radius = 204.0
+height = 476.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_xhfnw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_kpjcp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_kne1u")

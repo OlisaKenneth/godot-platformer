@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://bs4jxre0l6lry"]
+
+[ext_resource type="Script" uid="uid://bdla2qq0uhn41" path="res://enemies/enemy.gd" id="1_4gyqm"]
+[ext_resource type="PackedScene" uid="uid://db5e8eg6iccto" path="res://enemies/expdrop.tscn" id="2_orwns"]
+[ext_resource type="Texture2D" uid="uid://8fsrmqcksk85" path="res://player/spaceship.png" id="4_07tka"]
+[ext_resource type="AudioStream" uid="uid://b0elcpuaeur1g" path="res://arcade-game-damage-hit-sonic-bat-3-3-00-00.mp3" id="4_a6vjd"]
+[ext_resource type="AudioStream" uid="uid://begdhdxm54gv2" path="res://610281__brickdeveloper171__retro-death.wav" id="5_07tka"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
+size = Vector2(95, 91)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qi2p4"]
+radius = 332.99
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Enemy" type="CharacterBody2D" parent="."]
+script = ExtResource("1_4gyqm")
+attack_range = 200.0
+exp_drop_scene = ExtResource("2_orwns")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+modulate = Color(1, 0.0392157, 0.0901961, 1)
+scale = Vector2(0.21080308, 0.22210743)
+texture = ExtResource("4_07tka")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+shape = SubResource("RectangleShape2D_4gyqm")
+
+[node name="Area2D" type="Area2D" parent="Enemy"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Area2D"]
+visible = false
+shape = SubResource("CircleShape2D_qi2p4")
+
+[node name="EDamage" type="AudioStreamPlayer2D" parent="Enemy"]
+stream = ExtResource("4_a6vjd")
+
+[node name="Death" type="AudioStreamPlayer2D" parent="Enemy"]
+stream = ExtResource("5_07tka")

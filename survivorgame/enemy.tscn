@@ -1,0 +1,34 @@
+[gd_scene load_steps=8 format=3 uid="uid://d1cfcpouoyrap"]
+
+[ext_resource type="Script" uid="uid://bdla2qq0uhn41" path="res://enemies/enemy.gd" id="1_4gyqm"]
+[ext_resource type="PackedScene" uid="uid://db5e8eg6iccto" path="res://enemies/expdrop.tscn" id="2_3t1x0"]
+[ext_resource type="Texture2D" uid="uid://8fsrmqcksk85" path="res://player/spaceship.png" id="4_07tka"]
+[ext_resource type="AudioStream" uid="uid://dxjurkfl3yy88" path="res://player/laser.mp3" id="5_epsnb"]
+[ext_resource type="AudioStream" uid="uid://dnc07p45w72nj" path="res://player/Move.mp3" id="6_4w5fm"]
+[ext_resource type="AudioStream" uid="uid://bu8wps003agfd" path="res://player/PlayerDamage.mp3" id="7_uba7a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6vjd"]
+size = Vector2(86, 69.5)
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
+script = ExtResource("1_4gyqm")
+exp_drop_scene = ExtResource("2_3t1x0")
+
+[node name="Damage" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_uba7a")
+
+[node name="Move" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_4w5fm")
+
+[node name="Shoot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_epsnb")
+volume_db = -30.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.09019608, 0.05490196, 1)
+scale = Vector2(0.17638624, 0.17252065)
+texture = ExtResource("4_07tka")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -6.25)
+shape = SubResource("RectangleShape2D_a6vjd")

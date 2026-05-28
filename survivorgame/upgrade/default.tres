@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://c2a6xawqjfucx"]
+
+[ext_resource type="Texture2D" uid="uid://dkk7bxm7md5nj" path="res://upgrade/uipackSpace_sheet.png" id="1_gnajp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5nblx"]
+texture = ExtResource("1_gnajp")
+region_rect = Rect2(3, 3, 94, 94)
+
+[resource]
+Panel/styles/panel = SubResource("StyleBoxTexture_5nblx")

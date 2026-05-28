@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://cl7fg0eb1qm60"]
+
+[ext_resource type="Texture2D" uid="uid://dgduur1faxkt5" path="res://icon.svg" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://c8grt23jfsc1k" path="res://player.gd" id="2_i3pqv"]
+[ext_resource type="Script" uid="uid://t3q1tdmdyl0r" path="res://enemy_spawner.gd" id="3_hqtel"]
+[ext_resource type="PackedScene" uid="uid://bs4jxre0l6lry" path="res://enemy.tscn" id="4_sweqy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
+size = Vector2(124, 126)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
+position = Vector2(578, 220)
+script = ExtResource("2_i3pqv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(3, 6)
+texture = ExtResource("1_onrkg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(5, 4)
+shape = SubResource("RectangleShape2D_onrkg")
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+script = ExtResource("3_hqtel")
+enemy_scene = ExtResource("4_sweqy")
