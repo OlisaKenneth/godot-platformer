@@ -1,0 +1,105 @@
+[gd_scene load_steps=5 format=3 uid="uid://yewo74e8if8j"]
+
+[ext_resource type="Script" uid="uid://hp34vq7us30t" path="res://Scripts/GameController.gd" id="1_qxrlw"]
+[ext_resource type="Script" uid="uid://dngeewswwi0j1" path="res://Scripts/BoardView.gd" id="2_wrm1d"]
+[ext_resource type="Texture2D" uid="uid://b20ibbj4qua7s" path="res://Assets/Screenshot 2025-11-07 at 9.38.56 AM.png" id="3_3dryh"]
+[ext_resource type="Texture2D" uid="uid://dohdeud2y6cy0" path="res://Assets/Screenshot 2025-11-07 at 9.39.16 AM.png" id="4_wowpa"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qxrlw")
+
+[node name="TurnLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 3.0
+offset_top = 36.0
+offset_right = 58.0
+offset_bottom = 59.0
+text = "Turn: X"
+
+[node name="BoardView" type="GridContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 264.0
+offset_top = 69.0
+offset_right = 656.0
+offset_bottom = 461.0
+columns = 3
+script = ExtResource("2_wrm1d")
+x_texture = ExtResource("3_3dryh")
+o_texture = ExtResource("4_wowpa")
+
+[node name="Cell_0" type="Button" parent="BoardView"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 48
+
+[node name="Cell_1" type="Button" parent="BoardView"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 48
+
+[node name="Cell_2" type="Button" parent="BoardView"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 48
+
+[node name="Cell_3" type="Button" parent="BoardView"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 48
+
+[node name="Cell_4" type="Button" parent="BoardView"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 48
+
+[node name="Cell_5" type="Button" parent="BoardView"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 48
+
+[node name="Cell_6" type="Button" parent="BoardView"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 48
+
+[node name="Cell_7" type="Button" parent="BoardView"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 48
+
+[node name="Cell_8" type="Button" parent="BoardView"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 48
+
+[node name="NewGameButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 96.0
+offset_bottom = 33.0
+text = "New Game"
+
+[node name="ResultDialog" type="AcceptDialog" parent="."]
+unique_name_in_owner = true
+oversampling_override = 1.0
+position = Vector2i(0, 36)
+visible = true

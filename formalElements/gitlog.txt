@@ -1,0 +1,41 @@
+commit 38f8a8bf0460c15a9f370d442ea28377eee32ec6
+Author: olisa kenneth <olisaemekatochukwu@gmail.com>
+Date:   Fri Oct 3 15:17:50 2025 -0600
+
+    just finished implementing all methods and done all test which returned all passed will go ahead to submit
+
+commit 73d7fa93090bc63ebd84dee10f789e09d6784e54
+Author: olisa kenneth <olisaemekatochukwu@gmail.com>
+Date:   Fri Oct 3 14:29:13 2025 -0600
+
+    just set up the testing framework, and implmented unit tests for all methods
+
+commit ccb5820d76db30c8572b626d827ff276e721385f
+Author: olisa kenneth <olisaemekatochukwu@gmail.com>
+Date:   Fri Oct 3 12:04:39 2025 -0600
+
+    Document the script, and each individual class variable and method
+
+commit cc7481f4a59750b11a590990cf8ec76ea1291988
+Author: olisa kenneth <olisaemekatochukwu@gmail.com>
+Date:   Fri Oct 3 11:52:37 2025 -0600
+
+    just made some stubs for all functions in dice roller and implemented the extends refcounted
+
+commit d381365f04ad97070a3a34091b3a2e8e9d9f1666
+Author: olisa kenneth <olisaemekatochukwu@gmail.com>
+Date:   Fri Oct 3 11:02:17 2025 -0600
+
+    i just completed question 2 with the formal structure
+
+commit 70bfbb4588920c291485f4f36831b4b8fd11d186
+Author: olisa kenneth <olisaemekatochukwu@gmail.com>
+Date:   Wed Sep 17 10:24:45 2025 -0600
+
+    this is me trying to commit from terminal
+
+commit 464d5f168e931a75f6a7d99861635d92b4171112
+Author: olisa kenneth <idz632@usask.ca>
+Date:   Wed Sep 10 13:46:34 2025 -0600
+
+    this is my first commit
